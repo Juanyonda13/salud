@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Htpp\Controllers\PacienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::resource('/paciente',PacienteController::class);
 
 Route::resource('user', UserController::class);
