@@ -41,7 +41,7 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-             $validar=validator::make($request::all(),[
+             $validar= Validator::make($request->all(),[
                       'nombre_paciente'=>'required',
                       'apellido_paciente'=>'required',
                       'telefono_paciente'=>'required',
@@ -59,10 +59,13 @@ class PacienteController extends Controller
                 $paciente->save();
                 if($paciente)
                 {
-                    Alert::succes('Realizado','paciente guardado');
+                    Alert::success('Realizado','paciente guardado');
                     return redirect()->route('paciente.index');
                 }
-                
+                else {
+                    Alert::error('Failed', 'Registo no Guardado');
+                    return redirect('/paciente/create');
+                }
              }
     }
 
@@ -85,7 +88,8 @@ class PacienteController extends Controller
      */
     public function edit(Paciente $paciente)
     {
-        
+        $TipoDocumentos=tipo_documento::all();
+        return view('paciente.edit');
     }
 
     /**
