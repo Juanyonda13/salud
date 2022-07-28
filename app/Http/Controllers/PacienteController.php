@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Paciente;
 use App\Models\tipo_documento;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Pagination\Paginator;
 
 class PacienteController extends Controller
 {
@@ -27,7 +30,7 @@ class PacienteController extends Controller
     public function create()
     {
         $TipoDocumentos=tipo_documento::all();
-        return view('paciente.create');
+        return view('paciente.create',compact('TipoDocumentos'));
     }
 
     /**
@@ -38,7 +41,9 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        
+             $validar=validator::make($reuqest::all()[
+                      ''
+             ]);
     }
 
     /**
