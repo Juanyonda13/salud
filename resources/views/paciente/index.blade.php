@@ -37,7 +37,7 @@
                     <h1 class="font-1 active">S</h1>
                  </div>
                  <nav class="d-flex flex-column nav w-100 p-4 h-50 justify-content-between">
-                    <a class=" nav-link d-flex justify-content-center">Ver pacientes</a>
+                    <a class=" nav-link d-flex justify-content-center" href="/paciente">Ver pacientes</a>
                     <a class="nav-link d-flex justify-content-center">Crear pacientes</a>
                     <a class="nav-link d-flex justify-content-center">histotial medico</a>
                     <a class="nav-link d-flex justify-content-center">Ajustes</a>
@@ -65,12 +65,13 @@
                                 <td>{{$paciente -> apellido_paciente}}</td>
                                 <td>{{$paciente -> telefono_paciente}}</td>
                                 <td>{{$paciente -> direccion_paciente}}</td>
-                                <td>{{$paciente -> id_tipo_documento}}</td>
-                                <td><button type="button" class="btn btn-warning"><a >detalles</a></td>
-                                  <td><button type="button" class="btn btn-danger"><a >Eliminar</a></td>
-                                <td><button type="button" class="btn btn-danger">Delete</button></td>
+                                @foreach($tipodoc as $tipodocs)
+                                    @if ($paciente->id_tipo_documento == $tipodocs->id)
+                                    <td>{{$tipodocs -> tipo_documento}}</td>
+                                    @endif
+                                @endforeach
+                                <td><button class="btn btn-primary">Actualizar</button></td>
                               </tr>
-        
                             @endforeach
                         </tbody>
                       </table>

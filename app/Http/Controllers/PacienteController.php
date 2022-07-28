@@ -15,8 +15,9 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        $pacientes=Paciente::simplePaginate(7);
-        return view('paciente.index' ,compact('pacientes'));
+        $pacientes= Paciente::simplePaginate(7);
+        $tipodoc = tipo_documento::simplePaginate();
+        return view('paciente.index' , compact('pacientes', 'tipodoc'));
     }
 
     /**
@@ -47,9 +48,12 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function show(Paciente $paciente)
+    public function show($id)
     {
-        //
+        
+        $paciente = Paciente::where('id',  $id)->first();
+
+        return response()->json($paciente);
     }
 
     /**
@@ -83,6 +87,6 @@ class PacienteController extends Controller
      */
     public function destroy(Paciente $paciente)
     {
-        //
+        
     }
 }
