@@ -37,8 +37,8 @@
                     <h1 class="font-1 active">S</h1>
                  </div>
                  <nav class="d-flex flex-column nav w-100 p-4 h-50 justify-content-between">
-                    <a class=" nav-link d-flex justify-content-center">Home</a>
-                    <a class="nav-link d-flex justify-content-center">calendario</a>
+                    <a class=" nav-link d-flex justify-content-center">Ver pacientes</a>
+                    <a class="nav-link d-flex justify-content-center">Crear pacientes</a>
                     <a class="nav-link d-flex justify-content-center">histotial medico</a>
                     <a class="nav-link d-flex justify-content-center">Ajustes</a>
                  </nav>
