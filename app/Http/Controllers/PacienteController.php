@@ -42,11 +42,11 @@ class PacienteController extends Controller
     public function store(Request $request)
     {
              $validar=validator::make($request::all(),[
-                      'nombre_paciente'=>'requirted',
-                      'apellido_paciente'=>'requirted',
-                      'telefono_paciente'=>'requirted',
-                      'direccion_paciente'=>'requirted',
-                      'id_tipo_documento'=>'requirted',
+                      'nombre_paciente'=>'required',
+                      'apellido_paciente'=>'required',
+                      'telefono_paciente'=>'required',
+                      'direccion_paciente'=>'required',
+                      'id_tipo_documento'=>'required',
 
              ]);
              if(!$validar->fails()){
