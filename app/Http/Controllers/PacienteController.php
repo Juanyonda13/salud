@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Paciente;
+use App\Models\tipo_documento;
 use Illuminate\Http\Request;
 
 class PacienteController extends Controller
@@ -24,7 +25,8 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        //
+        $TipoDocumentos=tipo_documento::all();
+        return view('paciente.create');
     }
 
     /**
