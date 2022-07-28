@@ -15,6 +15,8 @@ class CreateHistoriaClinicasTable extends Migration
     {
         Schema::create('historia_clinicas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_paciente');
+           
             $table->timestamps();
         });
     }
