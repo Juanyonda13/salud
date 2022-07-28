@@ -46,7 +46,7 @@ class PacienteController extends Controller
                       'apellido_paciente'=>'requirted',
                       'telefono_paciente'=>'requirted',
                       'direccion_paciente'=>'requirted',
-                      'id_tipo_document'=>'requirted',
+                      'id_tipo_documento'=>'requirted',
 
              ]);
              if(!$validar->fails()){
