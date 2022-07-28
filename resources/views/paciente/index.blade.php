@@ -37,7 +37,7 @@
                     <h1 class="font-1 active">S</h1>
                  </div>
                  <nav class="d-flex flex-column nav w-100 p-4 h-50 justify-content-between">
-                    <a class=" nav-link d-flex justify-content-center">Ver pacientes</a>
+                    <a class=" nav-link d-flex justify-content-center" href="/paciente">Ver pacientes</a>
                     <a class="nav-link d-flex justify-content-center">Crear pacientes</a>
                     <a class="nav-link d-flex justify-content-center">histotial medico</a>
                     <a class="nav-link d-flex justify-content-center">Ajustes</a>
@@ -46,89 +46,35 @@
            <section class="col-10 d-flex border">
             <div class="container card col-11 m-3 ">
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table mt-5">
                         <thead>
-                            <tr>
-                                 <th>lunes</th>
-                                 <th>martes</th>
-                                 <th>miercoles</th>
-                                 <th>jueves</th>
-                                 <th>viernes</th>
-                            </tr>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre Paciente</th>
+                            <th scope="col">Apellido Paciente</th>
+                            <th scope="col">Telefono Paciente</th>
+                            <th scope="col">Direccion Paciente</th>
+                            <th scope="col">Tipo_documento Paciente</th>
+                          </tr>
                         </thead>
                         <tbody>
-                           <tr>
-                                <th class="col">8:00 am</th>
-                                     <th><button class="btn btn-primary">+</button></th>
-                                     <th><button class="btn btn-primary">+</button></th>                                    
-                                     <th><button class="btn btn-primary">+</button></th>
-                                     <th><button class="btn btn-primary">+</button></th>    
-                           </tr>
-                           <tr>
-                             <th class="col">9:00 am</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">10:00 am</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">11:00 am</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">12:00 am</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">1:00 pm</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">2:00 pm</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">3:00 pm</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">4:00 pm</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">5:00 p  m</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
+                            @foreach ($pacientes as $paciente)
+                            <tr>
+                                <th scope="row">{{$loop->iteration}}</th>
+                                <td>{{$paciente->  nombre_paciente }}</td>
+                                <td>{{$paciente -> apellido_paciente}}</td>
+                                <td>{{$paciente -> telefono_paciente}}</td>
+                                <td>{{$paciente -> direccion_paciente}}</td>
+                                @foreach($tipodoc as $tipodocs)
+                                    @if ($paciente->id_tipo_documento == $tipodocs->id)
+                                    <td>{{$tipodocs -> tipo_documento}}</td>
+                                    @endif
+                                @endforeach
+                                <td><button class="btn btn-primary">Actualizar</button></td>
+                              </tr>
+                            @endforeach
                         </tbody>
-                   </table>
+                      </table>
                 </div>
 
             </div>
