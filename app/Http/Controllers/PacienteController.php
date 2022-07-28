@@ -41,9 +41,29 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-             $validar=validator::make($reuqest::all()[
-                      ''
+             $validar=validator::make($reuqest::all(),[
+                      'nombre_paciente'=>'requirted',
+                      'apellido_paciente'=>'requirted',
+                      'telefono_paciente'=>'requirted',
+                      'direccion_paciente'=>'requirted',
+                      'id_tipo_documento'=>'requirted',
+
              ]);
+             if(!$validar->fails()){
+                $paciente=new paciente();
+                $paciente->nombre_paciente=$request->nombre_paciente;
+                $paciente->apellido_paciente=$request->apellido_paciente;
+                $paciente->telefono_paciente=$request->telefono_paciente;
+                $paciente->direccion_paciente=$request->direccion_paciente;
+                $paciente->id_tipo_document=$request->id_tipo_document;
+                $paciente->save();
+                if($paciente)
+                {
+                    Alert::succes('Realizado','paciente guardado');
+                    return redirect()->route('paciente.index');
+                }
+                
+             }
     }
 
     /**
