@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Paciente;
 use App\Models\tipo_documento;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Pagination\Paginator;
 
 class PacienteController extends Controller
 {
@@ -28,7 +31,7 @@ class PacienteController extends Controller
     public function create()
     {
         $TipoDocumentos=tipo_documento::all();
-        return view('paciente.create');
+        return view('paciente.create',compact('TipoDocumentos'));
     }
 
     /**
@@ -39,7 +42,29 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-        
+             $validar=validator::make($request::all(),[
+                      'nombre_paciente'=>'required',
+                      'apellido_paciente'=>'required',
+                      'telefono_paciente'=>'required',
+                      'direccion_paciente'=>'required',
+                      'id_tipo_documento'=>'required',
+
+             ]);
+             if(!$validar->fails()){
+                $paciente=new paciente();
+                $paciente->nombre_paciente=$request->nombre_paciente;
+                $paciente->apellido_paciente=$request->apellido_paciente;
+                $paciente->telefono_paciente=$request->telefono_paciente;
+                $paciente->direccion_paciente=$request->direccion_paciente;
+                $paciente->id_tipo_documento=$request->id_tipo_documento;
+                $paciente->save();
+                if($paciente)
+                {
+                    Alert::succes('Realizado','paciente guardado');
+                    return redirect()->route('paciente.index');
+                }
+                
+             }
     }
 
     /**
@@ -64,7 +89,7 @@ class PacienteController extends Controller
      */
     public function edit(Paciente $paciente)
     {
-        //
+        
     }
 
     /**

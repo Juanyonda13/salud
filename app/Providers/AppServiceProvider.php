@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\pagination\paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        
+        Paginator::useBootstrap();
     }
 }
