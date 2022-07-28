@@ -15,7 +15,7 @@ use App\Htpp\Controllers\PacienteController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('paciente/index');
 });
 Route::resource('/paciente',PacienteController::class);
 

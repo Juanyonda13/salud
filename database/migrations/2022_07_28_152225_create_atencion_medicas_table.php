@@ -15,6 +15,18 @@ class CreateAtencionMedicasTable extends Migration
     {
         Schema::create('atencion_medicas', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_historia_clinica')->nullable();
+            $table->string('fecha_atencion');
+            $table->string('hora_atencion');
+            $table->string('sintomas_paciente');
+            $table->string('diagnostico_paciente');
+            $table->string('tratamiento');
+            $table->string('recomendacion_medica');
+            $table->string('requiere_autorizacion');
+            $table->string('numero_autorizacion');
+
+
+            $table->foreign('id_historia_clinica')->references('id')->on('historia_clinicas')->onDelete('set null');
             $table->timestamps();
         });
     }

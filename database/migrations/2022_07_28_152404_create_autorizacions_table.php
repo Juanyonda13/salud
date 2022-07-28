@@ -15,6 +15,13 @@ class CreateAutorizacionsTable extends Migration
     {
         Schema::create('autorizacions', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('id_atencion_medica')->nullable();
+            $table->string('estado');
+            $table->string('observacion');
+            $table->string('numero_observacion');
+
+
+            $table->foreign('id_atencion_medica')->references('id')->on('atencion_medicas')->onDelete('set null');
             $table->timestamps();
         });
     }
