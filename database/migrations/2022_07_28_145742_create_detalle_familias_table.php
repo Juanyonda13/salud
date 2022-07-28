@@ -19,7 +19,13 @@ class CreateDetalleFamiliasTable extends Migration
             $table->string('apellidos_familia');
             $table->unsignedBigInteger('id_historia_clinica');
             $table->unsignedBigInteger('id_parentesco');
+            $table->unsignedBigInteger('id_tipo_documento');
+
+
+            $table->foreign('id_tipo_documento')->references('id')->on('tipo_documentos')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_parentesco')->references('id')->on('parentescos')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_historia_clinica')->references('id')->on('historia_clinicas')->onUpdate('cascade')->onDelete('cascade');
+           
             $table->timestamps();
 
         });
