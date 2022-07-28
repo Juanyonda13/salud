@@ -10,6 +10,7 @@
     <title>Salud</title>
 </head>
 <body>
+  @include('sweetalert::alert');
     <header class="container-fluid d-flex mw-100 border pt-2 ">
         <div class="container d-flex ms-5">
                <h2 class="">Salud</h2>
