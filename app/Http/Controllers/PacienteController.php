@@ -41,7 +41,7 @@ class PacienteController extends Controller
      */
     public function store(Request $request)
     {
-             $validar=validator::make($reuqest::all(),[
+             $validar=validator::make($request::all(),[
                       'nombre_paciente'=>'requirted',
                       'apellido_paciente'=>'requirted',
                       'telefono_paciente'=>'requirted',
@@ -55,7 +55,7 @@ class PacienteController extends Controller
                 $paciente->apellido_paciente=$request->apellido_paciente;
                 $paciente->telefono_paciente=$request->telefono_paciente;
                 $paciente->direccion_paciente=$request->direccion_paciente;
-                $paciente->id_tipo_document=$request->id_tipo_document;
+                $paciente->id_tipo_documento=$request->id_tipo_documento;
                 $paciente->save();
                 if($paciente)
                 {
@@ -85,7 +85,7 @@ class PacienteController extends Controller
      */
     public function edit(Paciente $paciente)
     {
-        //
+        
     }
 
     /**
