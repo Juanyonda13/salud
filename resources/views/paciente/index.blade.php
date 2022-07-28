@@ -46,33 +46,32 @@
            <section class="col-10 d-flex border">
             <div class="container card col-11 m-3 ">
                 <div class="card-body">
-                    <table class="table">
+                    <table class="table mt-5">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Nombre Paciente</th>
+                            <th scope="col">Apellido Paciente</th>
+                            <th scope="col">Telefono Paciente</th>
+                            <th scope="col">Direccion Paciente</th>
+                            <th scope="col">Tipo_documento Paciente</th>
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
+                            @foreach ($pacientes as $paciente)
+                            <tr>
+                                <th scope="row">{{$loop->iteration}}</th>
+                                <td>{{$paciente->  nombre_paciente }}</td>
+                                <td>{{$paciente -> apellido_paciente}}</td>
+                                <td>{{$paciente -> telefono_paciente}}</td>
+                                <td>{{$paciente -> direccion_paciente}}</td>
+                                <td>{{$paciente -> id_tipo_documento}}</td>
+                                <td><button type="button" class="btn btn-warning"><a >detalles</a></td>
+                                  <td><button type="button" class="btn btn-danger"><a >Eliminar</a></td>
+                                <td><button type="button" class="btn btn-danger">Delete</button></td>
+                              </tr>
+        
+                            @endforeach
                         </tbody>
                       </table>
                 </div>
