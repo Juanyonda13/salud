@@ -17,6 +17,9 @@ class CreateGrupoFamiliarsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_paciente');
             $table->unsignedBigInteger('id_detalle_familia');
+            $table->foreign('id_paciente')->references('id')->on('pacientes')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_detalle_familia')->references('id')->on('detalle_familias')->onUpdate('cascade')->onDelete('cascade');
+            
             $table->timestamps();
         });
     }
