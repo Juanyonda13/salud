@@ -47,87 +47,33 @@
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <tr>
-                                 <th>lunes</th>
-                                 <th>martes</th>
-                                 <th>miercoles</th>
-                                 <th>jueves</th>
-                                 <th>viernes</th>
-                            </tr>
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">Handle</th>
+                          </tr>
                         </thead>
                         <tbody>
-                           <tr>
-                                <th class="col">8:00 am</th>
-                                     <th><button class="btn btn-primary">+</button></th>
-                                     <th><button class="btn btn-primary">+</button></th>                                    
-                                     <th><button class="btn btn-primary">+</button></th>
-                                     <th><button class="btn btn-primary">+</button></th>    
-                           </tr>
-                           <tr>
-                             <th class="col">9:00 am</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">10:00 am</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">11:00 am</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">12:00 am</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">1:00 pm</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">2:00 pm</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">3:00 pm</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">4:00 pm</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
-                           <tr>
-                             <th class="col">5:00 p  m</th>
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>                                    
-                             <th><button class="btn btn-primary">+</button></th>
-                             <th><button class="btn btn-primary">+</button></th>
-                           </tr>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td colspan="2">Larry the Bird</td>
+                            <td>@twitter</td>
+                          </tr>
                         </tbody>
-                   </table>
+                      </table>
                 </div>
 
             </div>
