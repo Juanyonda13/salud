@@ -60,7 +60,7 @@
                     </div>
                     <div class="m-3">
                         <label class="form-label" for="">Telefono</label>
-                        <input type="text" class="form-control" name="telefono_paciente" id="telefono_paciente" tabindex="3" required>
+                        <input type="number" class="form-control" name="telefono_paciente" id="telefono_paciente" tabindex="3" required>
                     </div>
                     <div class="m-3">
                         <label class="form-label" for="">Direccion</label>
