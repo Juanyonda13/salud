@@ -51,7 +51,7 @@ class PacienteController extends Controller
 
              ]);
              if(!$validar->fails()){
-                $paciente=new paciente();
+                $paciente = new paciente();
                 $paciente->nombre_paciente=$request->nombre_paciente;
                 $paciente->apellido_paciente=$request->apellido_paciente;
                 $paciente->telefono_paciente=$request->telefono_paciente;
@@ -143,5 +143,10 @@ class PacienteController extends Controller
     public function destroy(Paciente $paciente)
     {
         
+        $paciente->delete();
+
+        Alert::success('Paciente', 'Eliminado Correctamente');
+        return redirect()->route('paciente.index');
+
     }
 }

@@ -52,32 +52,28 @@
                     @csrf
                     <div class="m-3">
                         <label class="form-label" for="">Nombres</label>
-                        <input type="text" class="form-control" name="nombre_paciente" id="nombre_paciente" tabindex="3">
+                        <input type="text" class="form-control" name="nombre_paciente" id="nombre_paciente" tabindex="3" required>
                     </div>
                     <div class="m-3">
                         <label class="form-label" for="">Apellidos</label>
-                        <input type="text" class="form-control" name="apellido_paciente" id="apellido_paciente" tabindex="3">
+                        <input type="text" class="form-control" name="apellido_paciente" id="apellido_paciente" tabindex="3" required>
                     </div>
                     <div class="m-3">
                         <label class="form-label" for="">Telefono</label>
-                        <input type="text" class="form-control" name="telefono_paciente" id="telefono_paciente" tabindex="3">
+                        <input type="text" class="form-control" name="telefono_paciente" id="telefono_paciente" tabindex="3" required>
                     </div>
                     <div class="m-3">
                         <label class="form-label" for="">Direccion</label>
-                        <input type="text" class="form-control" name="direccion_paciente" id="direccion_paciente">
+                        <input type="text" class="form-control" name="direccion_paciente" id="direccion_paciente" required>
                     </div>
-                    <div class="m3">
+                    <div class="col-4">
                         
-                        <select class="m-3" name="id_tipo_documento" id="id_tipo_documento" value="$id">
+                        <select class="m-3 form-select" name="id_tipo_documento" id="id_tipo_documento" value="$id" required>
                             <option value=""selected>Tipo Documento</option>
                             @foreach ($TipoDocumentos as $Tipo_Documento)
-                           
-
                            <option value="{{$Tipo_Documento->id}}">{{$Tipo_Documento->tipo_documento}}</option>
                            @endforeach
                         </select>
-                            
-                        
                     </div>
 
                     <div class="m-4">

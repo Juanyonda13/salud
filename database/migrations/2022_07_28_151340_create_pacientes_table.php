@@ -17,7 +17,7 @@ class CreatePacientesTable extends Migration
             $table->id();
             $table->string('nombre_paciente');
             $table->string('apellido_paciente');
-            $table->integer('telefono_paciente');
+            $table->string('telefono_paciente');
             $table->string('direccion_paciente');
             $table->unsignedBigInteger('id_tipo_documento');
             $table->foreign('id_tipo_documento')->references('id')->on('tipo_documentos')->onUpdate('cascade')
