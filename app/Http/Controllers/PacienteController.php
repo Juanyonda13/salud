@@ -92,9 +92,10 @@ class PacienteController extends Controller
      */
     public function edit($id)
     {   
-        $paciente=Paciente::find($id); 
+        $paciente=Paciente::find($id);
+        $nombreDocumento=tipo_documento::find($id);
         $TipoDocumentos=tipo_documento::all();
-        return view('paciente.edit',compact('paciente','TipoDocumentos'));
+        return view('paciente.edit',compact('paciente','TipoDocumentos','nombreDocumento'));
     }
 
     /**

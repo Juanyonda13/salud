@@ -70,7 +70,7 @@
                     <div class="m3">
                         
                         <select class="m-3" name="id_tipo_documento" id="id_tipo_documento" value="$id">
-                           <option value="{{$paciente->id_tipo_documento}}">{{$paciente->id_tipo_documento }}</option>
+                           <option value="{{$paciente->id_tipo_documento}}">{{$nombreDocumento->tipo_documento }}</option>
                            @foreach ($TipoDocumentos as $Tipo_Documento)
                            <option value="{{$Tipo_Documento->id}}">{{$Tipo_Documento->tipo_documento}}</option>
                            @endforeach
