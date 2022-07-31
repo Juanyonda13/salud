@@ -20,6 +20,7 @@ class CreatePacientesTable extends Migration
             $table->string('telefono_paciente');
             $table->string('direccion_paciente');
             $table->unsignedBigInteger('id_tipo_documento');
+            
             $table->foreign('id_tipo_documento')->references('id')->on('tipo_documentos')->onUpdate('cascade')
             ->onDelete('cascade');
             $table->timestamps();

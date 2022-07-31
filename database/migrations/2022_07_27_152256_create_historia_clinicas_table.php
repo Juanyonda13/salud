@@ -17,6 +17,8 @@ class CreateHistoriaClinicasTable extends Migration
             $table->id();
             $table->unsignedBigInteger('id_paciente');
            
+            $table->foreign('id_paciente')->references('id')->on('pacientes')->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }
