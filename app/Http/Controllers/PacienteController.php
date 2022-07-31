@@ -90,10 +90,11 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Paciente $paciente)
-    {
+    public function edit($id)
+    {   
+        $paciente=Paciente::find($id); 
         $TipoDocumentos=tipo_documento::all();
-        return view('paciente.edit');
+        return view('paciente.edit',compact('paciente','TipoDocumentos'));
     }
 
     /**
@@ -103,9 +104,34 @@ class PacienteController extends Controller
      * @param  \App\Models\Paciente  $paciente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Paciente $paciente)
+    public function update(Request $request,$id)
     {
-        //
+        $validar= Validator::make($request->all(),[
+            'nombre_paciente'=>'required',
+            'apellido_paciente'=>'required',
+            'telefono_paciente'=>'required',
+            'direccion_paciente'=>'required',
+            'id_tipo_documento'=>'required',
+
+   ]);
+   if(!$validar->fails()){
+      $paciente=Paciente::find($id);
+      $paciente->nombre_paciente=$request->nombre_paciente;
+      $paciente->apellido_paciente=$request->apellido_paciente;
+      $paciente->telefono_paciente=$request->telefono_paciente;
+      $paciente->direccion_paciente=$request->direccion_paciente;
+      $paciente->id_tipo_documento=$request->id_tipo_documento;
+      $paciente->save();
+      if($paciente)
+      {
+          Alert::success('Realizado','paciente guardado');
+          return redirect()->route('paciente.index');
+      }
+      else {
+          Alert::error('Failed', 'Registo no Guardado');
+          return redirect('/paciente/create');
+      }
+   }
     }
 
     /**

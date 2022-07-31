@@ -18,9 +18,4 @@ use App\Http\Controllers\PacienteController;
 //     return view('paciente/index');
 // });
 Route::resource('/paciente',PacienteController::class);
-Route::resource('/verPaciente/{id}',PacienteController::class);
-Route::resource('/eliminarPaciente/{id}',PacienteController::class);
-
-
-
 Route::resource('user', UserController::class);

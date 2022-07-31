@@ -10,7 +10,7 @@
     <title>Salud</title>
 </head>
 <body>
-  @include('sweetalert::alert');
+  @include('sweetalert::alert')
     <header class="container-fluid d-flex mw-100 border pt-2 ">
         <div class="container d-flex ms-5">
                <h2 class="">Salud</h2>
@@ -70,7 +70,7 @@
                                     <td>{{$tipodocs -> tipo_documento}}</td>
                                     @endif
                                 @endforeach
-                                <td><button class="btn btn-primary">Actualizar</button></td>
+                                <td><a class="btn btn-primary" >Actualizar</a></td>
                               </tr>
                             @endforeach
                         </tbody>
