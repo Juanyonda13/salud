@@ -128,11 +128,12 @@ class PacienteController extends Controller
           Alert::success('Realizado','paciente guardado');
           return redirect()->route('paciente.index');
       }
-      else {
+    }
+      else{
           Alert::error('Failed', 'Registo no Guardado');
-          return redirect('/paciente/create');
+          return redirect('/paciente');
       }
-   }
+   
     }
 
     /**
