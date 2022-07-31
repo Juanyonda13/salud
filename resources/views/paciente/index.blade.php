@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     
     <title>Salud</title>
 </head>
 <body>
-  @include('sweetalert::alert');
+  @include('sweetalert::alert')
     <header class="container-fluid d-flex mw-100 border pt-2 ">
         <div class="container d-flex ms-5">
                <h2 class="">Salud</h2>
@@ -37,7 +38,7 @@
                     <h1 class="font-1 active">S</h1>
                  </div>
                  <nav class="d-flex flex-column nav w-100 p-4 h-50 justify-content-between">
-                    <a class=" nav-link d-flex justify-content-center" href="/paciente">Ver pacientes</a>
+                    <a class=" nav-link d-flex justify-content-center" href="{{route('paciente.index')}}">Ver pacientes</a>
                     <a class="nav-link d-flex justify-content-center">Crear pacientes</a>
                     <a class="nav-link d-flex justify-content-center">histotial medico</a>
                     <a class="nav-link d-flex justify-content-center">Ajustes</a>
@@ -46,6 +47,9 @@
            <section class="col-10 d-flex border">
             <div class="container card col-11 m-3 ">
                 <div class="card-body">
+                  <div class="col-2">
+                    <a href="{{route('paciente.create')}}"><button class="btn btn-primary">Nuevo Paciente</button> </a>
+                  </div>
                     <table class="table mt-5">
                         <thead>
                           <tr>
@@ -70,7 +74,16 @@
                                     <td>{{$tipodocs -> tipo_documento}}</td>
                                     @endif
                                 @endforeach
-                                <td><button class="btn btn-primary">Actualizar</button></td>
+                                <td>
+                                  <form action="{{ route('paciente.destroy',$paciente->id) }}" method="POST">
+                                      <a class="btn btn-sm btn-primary " href="{{ route('paciente.show',$paciente->id)}}"><i class="bi bi-exclamation-circle"></i></a>
+                                      <a class="btn btn-sm btn-success" href="{{ route('paciente.edit',$paciente->id)}}"><i class="bi bi-pencil-square"></i></a>
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                                  </form>
+                              </td>
+                                
                               </tr>
                             @endforeach
                         </tbody>
