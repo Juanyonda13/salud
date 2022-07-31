@@ -78,10 +78,10 @@ class PacienteController extends Controller
      */
     public function show($id)
     {
-        
-        $paciente = Paciente::where('id',  $id)->first();
+        $TipoDocumentos=tipo_documento::all();
+        $paciente = Paciente::findOrFail($id);
 
-        return response()->json($paciente);
+        return view('paciente.detalle', compact('TipoDocumentos', 'paciente'));
     }
 
     /**

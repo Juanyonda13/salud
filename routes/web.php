@@ -14,9 +14,9 @@ use App\Http\Controllers\PacienteController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('paciente/index');
-// });
+Route::get('/', function () {
+    return redirect()->route('paciente.index');
+});
 Route::resource('/paciente',PacienteController::class);
 
 
